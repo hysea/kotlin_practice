@@ -1,0 +1,19 @@
+private var str: String // 报错
+private var str: String = "str" //不报错
+private var str: String? = null //不报错
+
+但是在有的时候，我们并不想声明一个可空的对象，也没有办法在对象一声明就初始化，那么kotlin提供了延迟初始化：
+    lateinit var
+    by lazy
+
+lateinit var：作用在于在编译期检查时不因为属性变量未初始化而报错
+    1、只能修饰类属性，不能用来修饰局部变量
+    2、只能修饰对象，不能修饰基本类型，因为基本类型的属性在类加载后的准备阶段都会被初始化默认值
+    3、只能修饰var，不能修饰val
+    4、如果在属性被初始化之前就访问它，会报"kotlin.UninitializedPropertyAccessException: lateinit property * has not been initialized"
+    5、最常见的一种用法是依赖注入
+
+
+by lazy：本身就是一种属性委托
+    1、可用于类属性或者局部变量
+    2、

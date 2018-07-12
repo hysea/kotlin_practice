@@ -8,8 +8,8 @@ class User private constructor(val nickname: String) {
 
         fun newSubscribeUser(email: String) = User(email.substringBefore("@"))
 
-        fun newFecebookUser(accountId: Int) = User(getFacebookName(accountId))
+        fun newFacebookUser(accountId: Int) = User(getFacebookName(accountId))
     }
 }
 
-fun getFacebookName(accountId: Int) = "fecabook:$accountId"
+fun getFacebookName(accountId: Int) = "facebook:$accountId"

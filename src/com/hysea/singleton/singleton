@@ -1,1 +1,19 @@
 Java中五种单例模式的表现方式及优缺点以及用kotlin语法实现
+
+以Person为例
+
+object Person{}
+
+编译后的java语言：
+
+public final class Person {
+   public static final Person INSTANCE;
+
+   private Person() {
+      INSTANCE = (Person)this;
+   }
+
+   static {
+      new Person();
+   }
+}

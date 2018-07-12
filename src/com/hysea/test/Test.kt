@@ -31,6 +31,6 @@ fun testObject() {
     val newSubscribeUser = User.newSubscribeUser("hysea@163.com")
     println(newSubscribeUser.nickname)
 
-    val newFecebookUser = User.newFecebookUser(12)
-    println(newFecebookUser.nickname)
+    val newFacebookUser = User.newFacebookUser(12)
+    println(newFacebookUser.nickname)
 }
