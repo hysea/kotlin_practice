@@ -1,0 +1,17 @@
+集合可分为：可变集合类(Mutable)和不可变集合类(Immutable)
+集合类型：list()列表、set(集)、map(映射)
+
+list：List(不可变集合,ReadOnly,Immutable)、MutableList(可变集合)
+
+创建不可变List
+    // 用于创建没有元素的空List
+    @kotlin.internal.InlineOnly
+    public inline fun <T> listOf(): List<T> = emptyList()
+
+    // 用于创建拥有多个元素的List
+    public fun <T> listOf(vararg elements: T): List<T> = if (elements.size > 0) elements.asList() else emptyList()
+
+    // 用于创建只有一个元素的List
+    @JvmVersion
+    public fun <T> listOf(element: T): List<T> = java.util.Collections.singletonList(element)
+
